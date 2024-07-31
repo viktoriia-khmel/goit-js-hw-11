@@ -13,6 +13,7 @@ export function searchImages(query) {
   return fetch(`${URL}?${params}`)
     .then(response => {
       if (!response.ok) {
+        alert('Something went wrong!');
         throw new Error(response.status);
       }
       return response.json();

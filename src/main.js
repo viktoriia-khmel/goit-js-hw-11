@@ -23,6 +23,13 @@ function handleSubmit(event) {
   const inputValue = input.value.trim();
   if (inputValue === '') {
     loader.classList.add('visually-hidden');
+    iziToast.error({
+      maxWidth: '370px',
+      position: 'topRight',
+      messageColor: 'white',
+      backgroundColor: 'red',
+      message: 'This field can not be empty! Please, write your request!',
+    });
     return;
   }
 
