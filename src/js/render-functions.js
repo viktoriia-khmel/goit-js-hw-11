@@ -31,3 +31,8 @@ export function renderImages(images) {
 
   lightbox.refresh();
 }
+
+export function onFetchError(error) {
+  gallery.innerHTML = '';
+  alert('Ooops, something went wrong!');
+}

@@ -1,6 +1,7 @@
 'use strict';
 import { searchImages } from './js/pixabay-api';
-import { renderImages } from './js/render-functions';
+// import { onFetchError } from './js/render-functions';
+import { renderImages, onFetchError } from './js/render-functions';
 
 import iziToast from 'izitoast';
 
@@ -50,9 +51,7 @@ function handleSubmit(event) {
         renderImages(images);
       }
     })
-    .catch(error => {
-      console.error(error);
-    });
+    .catch(onFetchError);
 
   form.reset();
 }
