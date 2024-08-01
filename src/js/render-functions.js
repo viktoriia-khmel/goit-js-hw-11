@@ -1,6 +1,9 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+
 const gallery = document.querySelector('.gallery');
 
 export function renderImages(images) {
@@ -34,5 +37,11 @@ export function renderImages(images) {
 
 export function onFetchError(error) {
   gallery.innerHTML = '';
-  alert('Ooops, something went wrong!');
+  iziToast.error({
+    maxWidth: '370px',
+    position: 'topRight',
+    messageColor: 'white',
+    backgroundColor: 'red',
+    message: 'Ooops, something went wrong!',
+  });
 }
